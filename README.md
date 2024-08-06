@@ -7,3 +7,63 @@ Automatic Waiting: Automatically waits for elements to be ready before performin
 Network Control: Allows request interception and response mocking.
 Headless and Headed Modes: Supports both headless and headed execution.
 Rich API: Provides a comprehensive set of tools for interacting with web pages.
+# Installation and Setup
+**Python**
+**Step 1:** Install Python
+Ensure you have Python 3.7 or newer installed. You can download Python from the official website. Make sure to add Python to your PATH during installation.
+
+**Step 2:** Create a Virtual Environment
+Create a virtual environment to manage your dependencies:
+
+<bash>
+mkdir playwright-python-demo
+cd playwright-python-demo
+python -m venv venv
+
+Activate the virtual environment:
+
+On Windows:
+
+<bash>
+Copy code
+venv\Scripts\activate
+On macOS/Linux:
+
+<bash>
+Copy code
+source venv/bin/activate
+
+**Step 3**: Install Playwright
+Use pip to install Playwright and the browser binaries:
+
+<bash>
+Copy code
+pip install playwright
+python -m playwright install
+This installs Playwright and downloads the necessary browser binaries.
+
+**Step 4**: Write a Test Script
+Create a file named test_example.py and add a simple test:
+
+python
+Copy code
+from playwright.sync_api import sync_playwright
+
+def test_example():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        page = browser.new_page()
+        page.goto('https://example.com')
+        assert page.title() == 'Example Domain'
+        browser.close()
+
+test_example()
+
+**Step 5**: Run the Test
+Run your test script using Python:
+
+<bash>
+Copy code
+python test_example.py
+  
+This will open a browser, navigate to the example.com website, and verify the page title.
