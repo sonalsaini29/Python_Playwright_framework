@@ -17,10 +17,8 @@ Create a virtual environment to manage your dependencies:
 
 <bash>
 mkdir playwright-python-demo
-    
-cd playwright-python-demo
-
-python -m venv venv
+    cd playwright-python-demo
+    python -m venv venv
 
 Activate the virtual environment:
 
