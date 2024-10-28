@@ -20,6 +20,5 @@ test('has title on', async ({ page }) => {
 
 test('verify the load option', async({page}) => {
   await page.goto('https://www.nuskin.com/de_DE/home');
- 
 });
 
